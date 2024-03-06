@@ -1,11 +1,10 @@
-
 $.get('https://students-api.2.us-1.fl0.io/movies', (data) => {
-    renderCard(data);
+  data.forEach(renderMovie);
 })
 
-const renderCard= (data) => {
 
-      data.forEach((item) => {
+function renderMovie(item){
+
         const target = document.createElement('div');
         target.classList.add('target');
     
@@ -22,11 +21,10 @@ const renderCard= (data) => {
         
         const containerCards = document.getElementById('container-cards')
         containerCards.appendChild(target);
-        
-      });
+} 
 
-      
-}   
 
-console.log(data);
+
+
+
     
