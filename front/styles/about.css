@@ -1,0 +1,196 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+header {
+    background-color: #22242e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+}
+
+li, a {
+    font-family: "Monserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+}
+
+body {
+    background-color: #515050;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(./assets/ImgPeliculas.jpg);
+    background-size: cover;
+}
+
+section{
+    margin-top: 0.5em;
+    height: 70vh;
+}
+
+
+
+header h1 {
+    padding-left: 4em;
+    color: #0088a9;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: "Monserrat", sans-serif;
+}
+
+header .bi {
+    color: brown;
+    margin-right: 0.4em;
+}
+
+
+#nav--links li {
+   display: inline-block;
+   padding-right: 2em;
+
+}
+
+#nav--links li a {
+    transition: 0.5s;
+}
+
+#nav--links li a:hover {
+    color: #0088a9;
+}
+
+#section-1 {
+    padding-top: 0.5em;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+#section-2 {
+    padding-top: 2.5em;
+    margin-bottom: 0.5em;
+    display: flex;
+    justify-content: center;
+}
+
+#p-section-2-bold {
+    font-family: "Monserrat", sans-serif;
+    font-weight: bold;
+    color: #0088a9;
+    font-size: 1.8em;
+}
+
+#p-section-2 {
+    font-family: "Monserrat", sans-serif;
+    color: rgba(240, 248, 255, 0.752);
+    font-size: 1.2em;
+}
+
+.h1 {
+    font-family: "Monserrat", sans-serif;
+    font-size: 2.6em;
+    color: #0088a9;
+}
+
+#container--cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+#container-datos-int {
+    padding-top: 3em;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    width: 20.5rem;
+}
+
+.card-img-top {    
+    padding: 20px;   
+    border-radius: 50px;
+    height: 20em;
+}
+
+.card-body {
+    padding: 25px;
+    margin-top: -10px;
+}
+
+.btn-outline-info {
+    border-radius: 50px;
+    width: 120px;
+}
+
+.card-title {
+    font-family: "Monserrat", sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.card-text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.display-6 {
+    font-size: 2em;
+    font-family: "Monserrat", sans-serif;
+    color: #0088a9;
+}
+
+.display-5 {
+    font-size: 1em;
+    font-family: "Monserrat", sans-serif;
+    color: #0088a9;
+}
+
+.list-group {
+    width: 25rem;
+}
+
+.intereses-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 120px;
+    height: 120px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 0.0625em 0.0625em, rgba(0, 0, 0, 0.25) 0px 0.125em 0.5em, rgba(255, 255, 255, 0.1) 0px 0px 0px 1px inset;
+    border-radius: 15px;
+    background-color: #515050;
+    transition: 0.5s;
+}
+
+.intereses-card:hover {
+    background-color: #716969;
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.17) 0px -23px 25px 0px inset, rgba(0, 0, 0, 0.15) 0px -36px 30px 0px inset, rgba(0, 0, 0, 0.1) 0px -79px 40px 0px inset, rgba(0, 0, 0, 0.06) 0px 2px 1px, rgba(0, 0, 0, 0.09) 0px 4px 2px, rgba(0, 0, 0, 0.09) 0px 8px 4px, rgba(0, 0, 0, 0.09) 0px 16px 8px, rgba(0, 0, 0, 0.09) 0px 32px 16px;
+}
+
+
+#intereses {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.bi {
+    color: #edf0f1;
+}
+
+.p-intereses {
+    color: #edf0f1;
+    font-size: 1em;
+    font-family: "Monserrat", sans-serif;
+}
+
+.span-intereses{
+    height: 50px;
+    width: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    
+}

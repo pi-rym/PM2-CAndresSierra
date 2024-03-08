@@ -1,0 +1,62 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,500;1,500&display=swap');
+
+header {
+    background-color: #22242e;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5em 1.5em 1.5em 1.5em;
+}
+
+li, a {
+    font-family: "Monserrat", sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: #edf0f1;
+}
+
+header h1 {
+    padding-left: 4em;
+    color: #0088a9;
+    font-size: 3em;
+    font-weight: bold;
+    font-family: "Monserrat", sans-serif;
+}
+
+body {
+    background-color: #181b28;
+    background-image: linear-gradient(rgba(5, 7, 12, 0.75), rgba(5, 7, 12, 0.75)), url(./assets/ImgPeliculas.jpg);
+}
+
+header .bi {
+    color: brown;
+    margin-right: 0.4em;
+}
+
+
+#nav--links li {
+   display: inline-block;
+   padding-right: 2em;
+
+}
+
+#nav--links li a {
+    transition: 0.5s;
+}
+
+#nav--links li a:hover {
+    color: #0088a9;
+}
+
+#home {
+    display: block;
+    width: 50px;
+    font-weight: 700;
+    border-radius: 10px;
+    padding: 5px 5px;
+ 
+}
+
+#contac {
+    margin-top: 2em;
+}
