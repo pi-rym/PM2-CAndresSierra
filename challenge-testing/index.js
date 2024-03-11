@@ -11,7 +11,7 @@ class CarritoCompra  {
         let total = 0;
 
         for(let i = 0 ; i < this.products.length ; i++){
-           total += this.products[i].precio * this.products[i].quantity
+           total += this.products[i].price * this.products[i].quantity
         }
 
         return total;

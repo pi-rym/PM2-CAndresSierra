@@ -6,7 +6,7 @@
 //Debe tener un metodo 'aplicarDescuento(porcentaje)'el cual aplica un descuento al total de la compra según el porcentaje especificado.
 
 
-describe('', () => {
+describe('Clase CarritoCompra', () => {
     let carritoCompra;
 
     beforeEach( () => {
@@ -27,7 +27,7 @@ describe('', () => {
         const p1 = {
             id: 1,
             name: 'teclado',
-            precio: 200,
+            price: 200,
             quantity: 2
         }
 
@@ -61,7 +61,7 @@ describe('', () => {
             carritoCompra.agregarProducto(p1);
             carritoCompra.agregarProducto(p2);
 
-            const totalExpect = p1.precio * p1.quantity + p2.precio * p2.quantity;
+            const totalExpect = p1.price * p1.quantity + p2.price * p2.quantity;
 
             const total = carritoCompra.calcularTotal();
 
@@ -72,7 +72,7 @@ describe('', () => {
            carritoCompra.agregarProducto(p1);
            carritoCompra.agregarProducto(p2);
 
-           const subtotal = p1.precio * p1.quantity + p2.precio * p2.quantity;
+           const subtotal = p1.price * p1.quantity + p2.price * p2.quantity;
            const descuento = 20;
 
            const totalExpect = subtotal - (subtotal * (descuento / 100));
