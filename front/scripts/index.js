@@ -1,7 +1,7 @@
-const result = require('./handler');
+const fetchData = require('./handler');
 
-result()
 
+fetchData();
 
 
 
