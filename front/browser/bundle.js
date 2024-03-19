@@ -15,7 +15,7 @@
   \****************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
-eval("const renderMovie = __webpack_require__(/*! ./renderMovie */ \"./scripts/renderMovie.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst fetchData = async () => {\r\n    try {\r\n       const response = await axios.get(\"https://students-api.up.railway.app/movies\")\r\n       response.data.forEach(renderMovie);\r\n    } catch (error) {\r\n       console.log(error.message);\r\n    }\r\n   };\r\n\r\n   \r\nmodule.exports = fetchData;\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
+eval("const renderMovie = __webpack_require__(/*! ./renderMovie */ \"./scripts/renderMovie.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst fetchData = async () => {\r\n  try {\r\n    const response = await axios.get(\"http://localhost:3000/movies\");\r\n    response.data.forEach(renderMovie);\r\n  } catch (error) {\r\n    console.log(error.message);\r\n  }\r\n};\r\n\r\nmodule.exports = fetchData;\r\n\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
 
 /***/ }),
 

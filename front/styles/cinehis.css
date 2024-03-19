@@ -111,3 +111,62 @@ header .bi {
     font-family: "Monserrat", sans-serif;
     font-size: large;
 }
+
+#container-h2-section2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    padding-top: 3em;
+}
+
+
+#container--cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 4em;
+}
+
+.card {
+    border-radius: 30px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 60px 40px -7px;
+    width: 25rem;
+}
+
+.card-img-top {    
+    padding: 20px;   
+    border-radius: 50px;
+    height: 20em;
+}
+
+.card-body {
+    padding: 25px;
+    margin-top: -10px;
+}
+
+.btn-outline-info {
+    border-radius: 50px;
+    width: 120px;
+}
+
+.card-title {
+    font-family: "Monserrat", sans-serif;
+    font-size: 1.6em;
+    font-weight: bold;
+}
+
+.card-text {
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+.display-6 {
+    font-size: 2em;
+    font-family: "Monserrat", sans-serif;
+    color: #0088a9;
+}
+
+.display-5 {
+    font-size: 1em;
+    font-family: "Monserrat", sans-serif;
+    color: #0088a9;
+}
