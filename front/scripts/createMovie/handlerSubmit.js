@@ -12,16 +12,19 @@ async function handlerSubmit(event) {
   event.preventDefault();
   const genres = checkboxesValidate();
 
+  if (!genres) {
+    return alert("Selecciona al menos un género");
+  }
+
   if (
-    !title.value ||
-    !year.value ||
-    !director.value ||
-    !duration.value ||
-    !rate.value ||
-    !poster.value ||
-    !genres
+    !title.value.trim() ||
+    !year.value.trim() ||
+    !director.value.trim() ||
+    !duration.value.trim() ||
+    !rate.value.trim() ||
+    !poster.value.trim()
   ) {
-    return alert("Hacen falta campos");
+    return alert("Completa todos los campos del formulario");
   }
 
   const checkboxes = document.querySelectorAll(".genre-input:checked");
