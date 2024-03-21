@@ -1,8 +1,11 @@
 module.exports = {
-    mode:'development',
-    entry: "./scripts/index.js",
-    output: {
-        path: __dirname + "/browser",
-        filename:"bundle.js",
-    },
+  mode: "development",
+  entry: {
+    index: "./scripts/index.js",
+    Movies: "./scripts/createMovie/createMovie.js",
+  },
+  output: {
+    path: __dirname + "/browser",
+    filename: "[name].js",
+  },
 };

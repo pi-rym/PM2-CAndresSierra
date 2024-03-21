@@ -9,6 +9,21 @@ const movieController = async (req, res) => {
   }
 };
 
+const createMovie = async (req, res) => {
+  const { title, year, director, duration, genre, rate, poster } = req.body;
+  const newMovie = await movieServices.createMovie({
+    title,
+    year,
+    director,
+    duration,
+    genre,
+    rate,
+    poster,
+  });
+  res.status(201).json(newMovie);
+};
+
 module.exports = {
   movieController,
+  createMovie,
 };

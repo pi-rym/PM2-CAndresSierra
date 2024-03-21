@@ -60,3 +60,30 @@ header .bi {
 #contac {
     margin-top: 2em;
 }
+
+.form-control.fail input {
+    border: 1px solid;
+    border-color: brown;
+}
+
+p{
+    font-family: "Monserrat", sans-serif;
+    font-size: 13px;
+    color: brown;
+}
+
+input [name = "genre[]"] {
+    margin: 0;
+}
+
+
+.container-checkbox {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+
+.label-checkbox {
+    color: #0088a9;
+}

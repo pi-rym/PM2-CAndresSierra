@@ -9,33 +9,43 @@
 /******/ (() => { // webpackBootstrap
 /******/ 	var __webpack_modules__ = ({
 
-/***/ "./scripts/handler.js":
-/*!****************************!*\
-  !*** ./scripts/handler.js ***!
-  \****************************/
-/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const renderMovie = __webpack_require__(/*! ./renderMovie */ \"./scripts/renderMovie.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst fetchData = async () => {\r\n  try {\r\n    const response = await axios.get(\"http://localhost:3000/movies\");\r\n    response.data.forEach(renderMovie);\r\n  } catch (error) {\r\n    console.log(error.message);\r\n  }\r\n};\r\n\r\nmodule.exports = fetchData;\r\n\n\n//# sourceURL=webpack://front/./scripts/handler.js?");
-
-/***/ }),
-
-/***/ "./scripts/index.js":
-/*!**************************!*\
-  !*** ./scripts/index.js ***!
-  \**************************/
-/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
-
-eval("const fetchData = __webpack_require__(/*! ./handler */ \"./scripts/handler.js\");\r\n\r\n\r\nfetchData();\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n    \r\n\n\n//# sourceURL=webpack://front/./scripts/index.js?");
-
-/***/ }),
-
-/***/ "./scripts/renderMovie.js":
-/*!********************************!*\
-  !*** ./scripts/renderMovie.js ***!
-  \********************************/
+/***/ "./scripts/createMovie/checkboxVal.js":
+/*!********************************************!*\
+  !*** ./scripts/createMovie/checkboxVal.js ***!
+  \********************************************/
 /***/ ((module) => {
 
-eval("\r\nfunction renderMovie(item){\r\n\r\n    const target = document.createElement('div');\r\n    target.classList.add('target');\r\n  \r\n  \r\n    target.innerHTML = `\r\n    <img src=\"${item.poster}\" alt=\"${item.title}\">\r\n    <div class=\"content\">  \r\n    <a href=\"\">${item.title}</a>\r\n    <p class=\"año\">${item.year}</p>\r\n    <p class=\"director\">${item.director}</p>\r\n    <p class=\"genero\">${item.genre.join(', ')}</p>\r\n    <h6><span>IMDB</span><i class=\"bi bi-star-fill\"></i>${item.rate}</h6>\r\n    </div>`\r\n    \r\n    const containerCards = document.getElementById('container-cards')\r\n    containerCards.appendChild(target);\r\n} \r\n\r\nmodule.exports = renderMovie\r\n\n\n//# sourceURL=webpack://front/./scripts/renderMovie.js?");
+eval("function checkboxesValidate() {\r\n  const checkboxes = document.querySelectorAll('input[name=\"genre[]\"]');\r\n\r\n  for (const item of checkboxes) {\r\n    if (item.checked) {\r\n      item.classList.add(\"selected\");\r\n      return true;\r\n    }\r\n  }\r\n}\r\n\r\nmodule.exports = checkboxesValidate;\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie/checkboxVal.js?");
+
+/***/ }),
+
+/***/ "./scripts/createMovie/cleaner.js":
+/*!****************************************!*\
+  !*** ./scripts/createMovie/cleaner.js ***!
+  \****************************************/
+/***/ ((module) => {
+
+eval("const title = document.getElementById(\"title-input\");\r\nconst year = document.getElementById(\"year-input\");\r\nconst director = document.getElementById(\"director-input\");\r\nconst duration = document.getElementById(\"duration-input\");\r\nconst rate = document.getElementById(\"rate-input\");\r\nconst poster = document.getElementById(\"poster-input\");\r\n\r\nfunction cleaner(event) {\r\n  event.preventDefault();\r\n  title.value = \"\";\r\n  year.value = \"\";\r\n  director.value = \"\";\r\n  duration.value = \"\";\r\n  rate.value = \"\";\r\n  poster.value = \"\";\r\n\r\n  const checkboxes = document.querySelectorAll('input[name=\"genre[]\"]');\r\n\r\n  for (const item of checkboxes) {\r\n    item.checked = false;\r\n    item.classList.remove(\"selected\");\r\n  }\r\n}\r\n\r\nmodule.exports = cleaner;\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie/cleaner.js?");
+
+/***/ }),
+
+/***/ "./scripts/createMovie/createMovie.js":
+/*!********************************************!*\
+  !*** ./scripts/createMovie/createMovie.js ***!
+  \********************************************/
+/***/ ((__unused_webpack_module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const handlerSubmit = __webpack_require__(/*! ./handlerSubmit */ \"./scripts/createMovie/handlerSubmit.js\");\r\nconst cleaner = __webpack_require__(/*! ./cleaner */ \"./scripts/createMovie/cleaner.js\");\r\n\r\nconst options = document.getElementById(\"options\");\r\nconst cleanerButton = document.getElementById(\"cleaner-button\");\r\nconst form = document.getElementById(\"form\");\r\n\r\nconst genres = [\r\n  \"Action\",\r\n  \"Fantasy\",\r\n  \"Comedy\",\r\n  \"Drama\",\r\n  \"Sci-fi\",\r\n  \"Terror\",\r\n  \"Adventure\",\r\n  \"Romance\",\r\n];\r\n\r\nfunction genresRender() {\r\n  options.innerHTML = \"\";\r\n\r\n  for (const genre of genres) {\r\n    const input = document.createElement(\"input\");\r\n    const label = document.createElement(\"label\");\r\n\r\n    input.type = \"checkbox\";\r\n    input.id = genre;\r\n    input.name = \"genre[]\";\r\n    input.value = genre;\r\n    input.classList.add(\"genre-input\");\r\n\r\n    label.htmlFor = genre;\r\n    label.textContent = genre;\r\n    label.classList.add(\"label-checkbox\");\r\n\r\n    options.classList.add(\"container-checkbox\");\r\n    options.appendChild(input);\r\n    options.appendChild(label);\r\n  }\r\n\r\n  return options;\r\n}\r\n\r\ngenresRender();\r\n\r\nform.addEventListener(\"submit\", handlerSubmit);\r\n\r\ncleanerButton.addEventListener(\"click\", cleaner);\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie/createMovie.js?");
+
+/***/ }),
+
+/***/ "./scripts/createMovie/handlerSubmit.js":
+/*!**********************************************!*\
+  !*** ./scripts/createMovie/handlerSubmit.js ***!
+  \**********************************************/
+/***/ ((module, __unused_webpack_exports, __webpack_require__) => {
+
+eval("const checkboxesValidate = __webpack_require__(/*! ./checkboxVal */ \"./scripts/createMovie/checkboxVal.js\");\r\nconst axios = __webpack_require__(/*! axios */ \"./node_modules/axios/dist/browser/axios.cjs\");\r\n\r\nconst title = document.getElementById(\"title-input\");\r\nconst year = document.getElementById(\"year-input\");\r\nconst director = document.getElementById(\"director-input\");\r\nconst duration = document.getElementById(\"duration-input\");\r\nconst rate = document.getElementById(\"rate-input\");\r\nconst poster = document.getElementById(\"poster-input\");\r\n\r\nasync function handlerSubmit(event) {\r\n  event.preventDefault();\r\n  const genres = checkboxesValidate();\r\n\r\n  if (\r\n    !title.value ||\r\n    !year.value ||\r\n    !director.value ||\r\n    !duration.value ||\r\n    !rate.value ||\r\n    !poster.value ||\r\n    !genres\r\n  ) {\r\n    return alert(\"Hacen falta campos\");\r\n  }\r\n\r\n  const checkboxes = document.querySelectorAll(\".genre-input:checked\");\r\n  const genres1 = [];\r\n  checkboxes.forEach((checkbox) => {\r\n    genres1.push(checkbox.value);\r\n  });\r\n\r\n  const movie = {\r\n    title: title.value,\r\n    year: year.value,\r\n    director: director.value,\r\n    duration: duration.value,\r\n    genre: genres1,\r\n    rate: rate.value,\r\n    poster: poster.value,\r\n  };\r\n\r\n  try {\r\n    const response = await axios.post(\"http://localhost:3000/movies\", movie);\r\n    console.log(response.data);\r\n    let movies = JSON.parse(localStorage.getItem(\"movies\")) || [];\r\n    movies.push(response.data);\r\n    localStorage.setItem(\"movies\", JSON.stringify(movies));\r\n    window.location.href = \"../index.html\";\r\n  } catch (error) {\r\n    console.log(error);\r\n  }\r\n}\r\n\r\nmodule.exports = handlerSubmit;\r\n\n\n//# sourceURL=webpack://front/./scripts/createMovie/handlerSubmit.js?");
 
 /***/ }),
 
@@ -94,7 +104,7 @@ eval("// Axios v1.6.7 Copyright (c) 2024 Matt Zabriskie and contributors\n\n\nfu
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/index.js");
+/******/ 	var __webpack_exports__ = __webpack_require__("./scripts/createMovie/createMovie.js");
 /******/ 	
 /******/ })()
 ;
